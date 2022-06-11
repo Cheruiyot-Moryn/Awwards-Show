@@ -5,10 +5,10 @@
 {{block.super}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
 <style>
     #background1 {
-       
+        background-image: url('https://unsplash.com/photos/7LEbEOSZxSU');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -29,10 +29,10 @@
                                         <img class="card-img-top mb-10 img-responsive i-images"
                                             src="{{project.project_image.url}}" style="height:270px;width:300px;">
                                         <div class="overlay">
-                                            <div class="text" style="font-size:20px; font-family: 'Special Elite', cursive; color: white;">{{project.project_title}}</div>
-                                            <p style="font-family: 'Special Elite', cursive; font-size: 15px; color: white;">By:{{project.user}}</p>
+                                            <div class="text" style="font-size:20px; font-family: 'Joan', serif; color: white;">{{project.project_title}}</div>
+                                            <p style="font-family: 'Joan', serif; font-size: 15px; color: white;">By:{{project.user}}</p>
                                             <div class="details"><a href="{% url 'projectdetails' id=project.id %}"
-                                                    class="btn btn-primary btn-md" style="font-family: 'Special Elite', cursive;">Rate/Review</a></div>
+                                                    class="btn btn-primary btn-md" style="font-family: 'Joan', serif;">Rate/Review</a></div>
                                         </div>
                                     </div>
                                 </a>
