@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+
+<title>New Project</title>
+{{form.media}}
+{% block styles %} {% bootstrap_css %}
+
+{% endblock %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+
+<style>
+    #background2 {
+        background-image: url('https://unsplash.com/photos/7LEbEOSZxSU');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+       
+    }
+</style>
+<div class="container" style="margin-top:20px;" id="background2">
+    <h2 style="text-align:center; font-family: 'Joan', serif; color: white; font-size: 40px;">Post A Project</h2>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="{%url 'add_project'%}" method="POST" enctype="multipart/form-data" style="font-family: 'Joan', serif; color: white; font-size: 15px;">
+                {%csrf_token%}
+
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-primary btn-block" style="font-family: 'Joan', serif; font-size: 20px;" value="Post">
+            </form>
+        </div>
+    </div>
+</div>
+
+</html>
+{% endblock %}
