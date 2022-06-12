@@ -33,27 +33,27 @@ class TestProfile(TestCase):
         self.assertTrue(len(profile) == 0)
 
 # class Project Test
-# class TestProject(TestCase):
-#     def setUp(self):
-#         self.project = Project(project_title ='new project', project_image='image.url',project_description="project",project_link="http://www.awwaards.com")
+class TestProject(TestCase):
+    def setUp(self):
+        self.project = Project(project_title ='new project', project_image='image.url',project_description="project",project_link="http://www.awwaards.com")
 
-#     def tearDown(self):
-#         Project.objects.all().delete()
+    def tearDown(self):
+        Project.objects.all().delete()
 
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.project, Project))
+    def test_instance(self):
+        self.assertTrue(isinstance(self.project, Project))
 
-#     def test_save_method(self):
-#         self.project.save_project()
-#         projects = Project.objects.all()
-#         self.assertTrue(len(projects)>0)
+    def test_save_method(self):
+        self.project.save_project()
+        projects = Project.objects.all()
+        self.assertTrue(len(projects)>0)
 
-#     def test_delete_method(self):
-#         self.project.save_project()
-#         projects = Project.objects.all()
-#         self.project.delete_project()
-#         projects = Project.objects.all()
-#         self.assertTrue(len(projects)==0)
+    def test_delete_method(self):
+        self.project.save_project()
+        projects = Project.objects.all()
+        self.project.delete_project()
+        projects = Project.objects.all()
+        self.assertTrue(len(projects)==0)
 
 # #class Reviews/Rates Test
 # class TestReviews(TestCase):
