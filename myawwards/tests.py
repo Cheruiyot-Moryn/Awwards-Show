@@ -56,29 +56,29 @@ class TestProject(TestCase):
         self.assertTrue(len(projects)==0)
 
 # #class Reviews/Rates Test
-# class TestReviews(TestCase):
-#     def setUp(self):
+class TestReviews(TestCase):
+    def setUp(self):
        
-#         self.user = User(username='mylo')
-#         self.user.save()
-#         self.project = Project(project_title ='new project', project_image='image.url',project_description="project",project_link="http://www.awwaards.com")
-#         self.project.save_project()
+        self.user = User(username='mylo')
+        self.user.save()
+        self.project = Project(project_title ='new project', project_image='image.url',project_description="project",project_link="http://www.awwaards.com")
+        self.project.save_project()
 
-#         self.new_review=Reviews(design="1",usability="2",content="3",user=self.user,project=self.project)
-#         self.new_review.save_review()
+        self.new_review=Reviews(design="1",usability="2",content="3",user=self.user,project=self.project)
+        self.new_review.save_review()
 
-#     def tearDown(self):
-#         Reviews.objects.all().delete()
+    def tearDown(self):
+        Reviews.objects.all().delete()
 
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.new_review,Reviews))
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_review,Reviews))
 
-#     def test_save_review(self):
-#         reviews = Reviews.objects.all()
-#         self.assertTrue(len(reviews)>0)
+    def test_save_review(self):
+        reviews = Reviews.objects.all()
+        self.assertTrue(len(reviews)>0)
 
-#     def test_delete_review(self):
-#         self.new_review.save_review()
-#         self.new_review.delete_review()
-#         reviews = Reviews.objects.all()
-#         self.assertTrue(len(reviews)==0)
+    def test_delete_review(self):
+        self.new_review.save_review()
+        self.new_review.delete_review()
+        reviews = Reviews.objects.all()
+        self.assertTrue(len(reviews)==0)
