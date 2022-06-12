@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{%block content%}
+<style>
+    #profile {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+</style>
+<style>
+    #background3 {
+        background-image: url('https://unsplash.com/photos/7LEbEOSZxSU');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+       
+    }
+</style>
+<div class="container" id="background3">
+    <div class="col-sm-6 m-auto ">
+        <div class=" content-section container" style="padding-top: 100px;">
+            <div class="media">
+                <div class="col-sm-4">
+                    <div id="profile" class="rounded-circle">
+                        <img style="width: 120%; height: 120%;" src="{{user.profile_picture.url }}" alt="">
+                    </div>
+                </div>
+                <hr>
+                <div class="media-body">
+                    <h2 style="font-family: 'Joan', serif; color: white; font-size: 40px;">{{user.username}}</h2>
+                    <p style="font-family: 'Joan', serif; color: white; font-size: 25px;"> Contact: {{user.contacts}}</p>
+                    <p style="font-family: 'Joan', serif; color: white;">{{user.profile_bio}}</p>
+                    <hr>
+                    <a href="">
+                        <button class="btn btn-primary" style="font-family: 'Joan', serif; font-size: 15px;">Edit Profile</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{%endblock content%}
