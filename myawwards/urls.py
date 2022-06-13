@@ -15,6 +15,8 @@ urlpatterns=[
     url(r'^project_details/(?P<id>\d+)', views.project_view, name='projectdetails'),
     url(r'^review/(?P<project_id>\d+)', views.review_project, name='review'),
     url('search/', views.search_project, name='search'),
+    url('api/projects',views.ProjectList.as_view(),name='projectsEndpoint'),
+    url('api/profiles',views.ProfileList.as_view(),name='profilesEndpoint'),
     ]
 
 if settings.DEBUG:
