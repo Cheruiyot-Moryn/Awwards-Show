@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'cloudinary',
     'myawwards',
     'rest_framework',
+    'registration',
+    'crispy-forms',
 ]
 
 MIDDLEWARE = [
