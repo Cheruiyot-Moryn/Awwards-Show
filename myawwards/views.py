@@ -1,3 +1,4 @@
+from myawwards.serializer import ProfileSerializer, ProjectSerializer
 from django.http.response import HttpResponseRedirect
 from .models import Profile, Project, Reviews
 from .forms import ProjectForm, ReviewForm, SignupForm, UserProfileForm
@@ -6,6 +7,8 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 # Create your views here.
 
@@ -99,3 +102,18 @@ def search_project(request):
     else:
         message = "You haven't searched for any project"
     return render(request, 'search.html', {'message': message})
+
+class ProfileList(APIView):
+   
+    def get(self, request, format=None):
+        profiles = Profile.objects.all()
+        serializer = ProfileSerializer(profiles, many=True)
+        return Response(serializer.data)
+   
+    
+class ProjectList(APIView):
+   
+    def get(self, request, format=None):
+        projects = Project.objects.all()
+        serializer = ProjectSerializer(projects, many=True)
+        return Response(serializer.data)    
