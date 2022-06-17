@@ -55,7 +55,7 @@ Then once you are done, open your browser with the local host; 127.0.0.1:8000
 6. Postgresql
 
 # Live Link
-[View Live Site.](/)
+[View Live Site.](https://moawards.herokuapp.com/)
 
 ## License
 Awwards-Show is under the [MIT](LICENSE) license.
